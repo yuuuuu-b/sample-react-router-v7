@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1736303375641,
+      "tag": "0000_faithful_jackpot",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1736304652544,
+      "tag": "0001_right_mordo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1736304918791,
+      "tag": "0002_freezing_the_enforcers",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1736498469633,
+      "tag": "0003_ambiguous_selene",
+      "breakpoints": true
+    }
+  ]
+}

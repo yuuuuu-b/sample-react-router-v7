@@ -1,0 +1,1 @@
+ALTER TABLE "my_schema"."topics" ADD COLUMN "topicName" varchar(255) NOT NULL;

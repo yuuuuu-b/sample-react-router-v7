@@ -1,0 +1,1 @@
+ALTER TABLE "my_schema"."topics" ADD COLUMN "createAt" date DEFAULT now() NOT NULL;
