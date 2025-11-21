@@ -1,100 +1,86 @@
-# Welcome to React Router!
+# 学習用
 
-A modern, production-ready template for building full-stack React applications using React Router.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+主な機能
 
-## Features
+トピックの作成・編集・一覧表示
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+PostgreSQL を使った永続化
 
-## Getting Started
+型安全なデータベース操作 (Drizzle ORM)
 
-### Installation
+React Router v7 を用いたルーティング管理
 
-Install the dependencies:
+Tailwind CSS + shadcn/ui による UI コンポーネント
 
-```bash
+TypeScript による型チェック
+
+必要環境
+
+Node.js 18 以上
+
+PostgreSQL 15 以上
+
+npm または yarn
+
+インストール
+# リポジトリをクローン
+git clone <repository-url>
+cd my-react-router-app
+
+# 依存パッケージのインストール
 npm install
-```
 
-### Development
+データベース設定
 
-Start the development server with HMR:
+PostgreSQL でデータベースを作成
 
-```bash
+CREATE DATABASE my_topics_db;
+
+
+.env ファイルをプロジェクトルートに作成し、接続情報を設定
+
+DATABASE_URL=postgres://username:password@localhost:5432/my_topics_db
+
+マイグレーション
+
+Drizzle を使ってテーブルを生成します。
+
+# スキーマ生成
+npm run drizzle:generate
+
+# マイグレーション実行
+npm run drizzle:migrate
+
+開発サーバー起動
 npm run dev
-```
 
-Your application will be available at `http://localhost:5173`.
 
-## Building for Production
+ブラウザで http://localhost:3000
+ にアクセス。
 
-Create a production build:
 
-```bash
-npm run build
-```
 
-## Deployment
+開発用コマンド
 
-### Docker Deployment
+型チェック: npm run typecheck
 
-This template includes three Dockerfiles optimized for different package managers:
+Drizzle 操作:
 
-- `Dockerfile` - for npm
-- `Dockerfile.pnpm` - for pnpm
-- `Dockerfile.bun` - for bun
+drizzle:generate - 型生成
 
-To build and run using Docker:
+drizzle:migrate - マイグレーション
 
-```bash
-# For npm
-docker build -t my-app .
+drizzle:push - データベースに強制適用
 
-# For pnpm
-docker build -f Dockerfile.pnpm -t my-app .
+drizzle:drop - テーブル削除（開発用）
 
-# For bun
-docker build -f Dockerfile.bun -t my-app .
+技術スタック
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+フロントエンド: React 19, React Router 7, shadcn/ui, Tailwind CSS
 
-The containerized application can be deployed to any platform that supports Docker, including:
+バックエンド: Node.js, Express, TypeScript
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+データベース: PostgreSQL, Drizzle ORM
 
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+ツール: Vite, tsx, cross-env
